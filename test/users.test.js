@@ -20,7 +20,7 @@ afterEach(async () => {
 describe('Get All Users', () => {
     test('Test get all users', async () => {
         const response = await request(app).get("/api/users");
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toBe(201);
         // expect(response.body.length).toBe(2);
     })
 })
@@ -75,7 +75,7 @@ describe('Update User By ID', () => {
             });
         expect(response.statusCode).toBe(201);
 
-        
+
     })
 })
 
