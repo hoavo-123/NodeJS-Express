@@ -72,13 +72,10 @@ const updateUser = (id, data) => {
                 .input('LastName', sql.VarChar, data.LastName)
                 .input('EmailAddress', sql.VarChar, data.EmailAddress)
                 .input('Address', sql.VarChar, data.Address)
-                .input('Gender', sql.VarChar, data.Gender)
-                .input('RoleID', sql.Bit, data.RoleID)
+                .input('Gender', sql.Bit, data.Gender)
+                .input('RoleID', sql.TinyInt, data.RoleID)
                 .input('PhoneNumber', sql.VarChar, data.PhoneNumber)
-                .input('PositionID', sql.VarChar, data.PositionID)
                 .input('Image', sql.VarChar, data.Image)
-                .input('createdAt', sql.DateTime, '2021-08-23T04:57:22.103Z')
-                .input('updatedAt', sql.DateTime, '2021-08-23T04:57:22.103Z')
                 .query(userCommandText.UPDATE_USER);
 
             resolve(list.recordset)

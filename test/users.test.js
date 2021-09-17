@@ -20,9 +20,9 @@ afterEach(async () => {
 describe('Get All Users', () => {
     test('Test get all users', async () => {
         const response = await request(app).get("/api/users");
-        expect(response.statusCode).toBe(201);
+        expect(response.statusCode).toBe(200);
         // expect(response.body.length).toBe(2);
-    })
+    }, 30000)
 })
 
 describe('Get User By ID', () => {
@@ -30,7 +30,7 @@ describe('Get User By ID', () => {
         const response = await request(app).get("/api/user/2");
         expect(response.statusCode).toBe(200);
         expect(response.body.length).toBe(1);
-    })
+    }, 30000)
 })
 
 describe('Create User By ID', () => {
@@ -43,13 +43,9 @@ describe('Create User By ID', () => {
                 EmailAddress: "hoavo@kms-technology.com",
                 Address: "22/23/8 Nguyễn Kiệm P03 Gò Vấp",
                 Gender: false,
-                RoleID: "1",
+                RoleID: 1,
                 PhoneNumber: "8946187",
-                PositionID: "1",
-                Image: "/public/image/h1.jpg",
-                createdAt: "2021-08-23T04:57:22.103Z",
-                updatedAt: "2021-08-23T04:57:22.103Z"
-
+                Image: "/public/image/h1.jpg"
             });
         expect(response.statusCode).toBe(201);
     })
@@ -65,13 +61,9 @@ describe('Update User By ID', () => {
                 EmailAddress: "hoavo@kms-technology.com",
                 Address: "22/23/8 Nguyễn Kiệm P03 Gò Vấp",
                 Gender: false,
-                RoleID: "1",
+                RoleID: 1,
                 PhoneNumber: "8946187",
-                PositionID: "1",
                 Image: "/public/image/h1.jpg",
-                createdAt: "2021-08-23T04:57:22.103Z",
-                updatedAt: "2021-08-23T04:57:22.103Z"
-
             });
         expect(response.statusCode).toBe(201);
 
