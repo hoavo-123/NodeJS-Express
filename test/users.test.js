@@ -65,7 +65,7 @@ describe('Update User By ID', () => {
                 PhoneNumber: "8946187",
                 Image: "/public/image/h1.jpg",
             });
-        expect(response.statusCode).toBe(201);
+        expect(response.statusCode).toBe(204);
 
 
     })
