@@ -53,7 +53,7 @@ describe('Create User By ID', () => {
 
 describe('Update User By ID', () => {
     test('Update get user by ID', async () => {
-        const response = await request(app).post("/api/user/1")
+        const response = await request(app).put("/api/user/1")
             .send({
                 FirstName: "testthaihoa",
                 Password: "$2a$10$n8JIpFupThC8kmYAe8EaOuCqcFiaxXcNteUCAYBGGNjiBIyjtjiVC",
